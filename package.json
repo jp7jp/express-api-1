@@ -3,5 +3,16 @@
     "body-parser": "^1.17.1",
     "express": "^4.15.2",
     "mongoose": "^4.9.1"
+  },
+  "devDependencies": {
+    "faker": "^4.1.0",
+    "jest": "^19.0.2",
+    "supertest": "^3.0.0"
+  },
+  "scripts": {
+    "test": "jest --watch --verbose"
+  },
+  "jest": {
+    "setupTestFrameworkScriptFile": "<rootDir>/setupTests.js"
   }
 }
