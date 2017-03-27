@@ -25,7 +25,7 @@ exports.show = (req, res, next) => {
 }
 
 exports.update = (req, res, next) => {
-  User.findByIdAndUpdate(req.params.id, req.body)
+  User.findByIdAndUpdate(req.params.id, req.body, {new: true})
     .then(user => {
       res.send(user);
     })
@@ -34,8 +34,8 @@ exports.update = (req, res, next) => {
 
 exports.delete = (req, res, next) => {
   User.findByIdAndRemove(req.params.id)
-    .then(() => {
-      res.status(204).end();
+    .then(user => {
+      res.send(user);
     })
     .catch(next);
 }
